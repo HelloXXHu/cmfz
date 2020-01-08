@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.CounterDao">
+
+    <select id="selectByCourseId" resultType="com.baizhi.entity.Counter">
+        select * from counter where courseId=#{id}
+    </select>
+
+    <insert id="insertCounter" parameterType="com.baizhi.entity.Counter">
+        insert into counter values(#{id},#{title},#{count},#{createDate},#{userId},#{courseId})
+    </insert>
+
+    <delete id="deleteCounter">
+        delete from counter where id=#{id}
+    </delete>
+
+    <update id="updateCounter" parameterType="com.baizhi.entity.Counter">
+        update counter set count=#{count} where id=#{id}
+    </update>
+
+</mapper>

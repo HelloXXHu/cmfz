@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.CourseDao">
+
+    <select id="selectAll" resultType="com.baizhi.entity.Course">
+        select * from course where userId=#{id}
+    </select>
+
+    <insert id="insert" parameterType="com.baizhi.entity.Course">
+        insert into course values(#{id},#{title},#{userId},#{type},#{createDate})
+    </insert>
+
+    <delete id="delete">
+        delete from course where id=#{id}
+    </delete>
+
+    <select id="selectById" parameterType="com.baizhi.entity.Course">
+        select * from course where id=#{id}
+    </select>
+
+</mapper>
